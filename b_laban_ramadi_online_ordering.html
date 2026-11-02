@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بـ لبن - فرع الرمادي | القائمة والطلب أونلاين</title>
+    <!-- Google Fonts: Alexandria & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blaban: {
+                            blue: '#0047FF',
+                            deep: '#0052CC',
+                            navy: '#002B7A',
+                            darkNavy: '#0B3574',
+                            wave: '#3B7BFF',
+                            light: '#EBF2FF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Alexandria', 'Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Alexandria', 'Cairo', sans-serif;
+            background-color: #0047FF;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg width='1440' height='600' viewBox='0 0 1440 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 120 Q 360 40 720 120 T 1440 120 M0 280 Q 360 360 720 280 T 1440 280 M0 440 Q 360 360 720 440 T 1440 440' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='18' stroke-linecap='round'/%3E%3Cpath d='M0 200 Q 360 120 720 200 T 1440 200 M0 360 Q 360 440 720 360 T 1440 360 M0 520 Q 360 440 720 520 T 1440 520' fill='none' stroke='rgba(59,123,255,0.25)' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* Hide scrollbars for horizontal category bar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Springy Micro-Animations for Buttons */
+        .btn-spring {
+            transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease, background-color 0.2s ease;
+        }
+        .btn-spring:hover {
+            transform: translateY(-2px) scale(1.03);
+        }
+        .btn-spring:active {
+            transform: translateY(1px) scale(0.92);
+        }
+
+        /* Glossy Shine Sweep Effect */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -65%;
+            width: 45%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.36) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(25deg);
+            animation: shineSweep 3.8s infinite ease-in-out;
+            pointer-events: none;
+        }
+        @keyframes shineSweep {
+            0% { left: -65%; }
+            35%, 100% { left: 135%; }
+        }
+
+        /* Gentle Float for Brand Carton Badge */
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+        }
+        .float-slow {
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+
+        /* Elastic Pop for Cart Counter */
+        @keyframes elasticPop {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.3); }
+            75% { transform: scale(0.92); }
+            100% { transform: scale(1); }
+        }
+        .animate-pop {
+            animation: elasticPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Phone Icon Ringing */
+        @keyframes phoneTilt {
+            0%, 100% { transform: rotate(0deg); }
+            15% { transform: rotate(15deg); }
+            30% { transform: rotate(-13deg); }
+            45% { transform: rotate(9deg); }
+            60% { transform: rotate(0deg); }
+        }
+        .phone-ring {
+            animation: phoneTilt 2.5s infinite ease-in-out;
+        }
+
+        /* Category Cloud Header Badge */
+        .category-cloud-badge {
+            background: #FFFFFF;
+            color: #002B7A;
+            border-radius: 9999px;
+            border: 4px solid #0047FF;
+            box-shadow: 0 0 0 4px #FFFFFF, 0 12px 26px -4px rgba(0, 22, 85, 0.55);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .category-cloud-badge:hover {
+            transform: scale(1.04) translateY(-2px);
+        }
+
+        /* Serrated Price Ticket (تذكرة السعر المشرشرة) */
+        .serrated-ticket {
+            position: relative;
+            background: #FFFFFF;
+            color: #002B7A;
+            padding: 0.45rem 0.95rem;
+            font-weight: 900;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 4px 6px rgba(0, 20, 80, 0.28));
+            clip-path: polygon(
+                0% 0%, 94% 0%, 100% 12.5%, 94% 25%, 100% 37.5%, 94% 50%, 100% 62.5%, 94% 75%, 100% 87.5%, 94% 100%,
+                6% 100%, 0% 87.5%, 6% 75%, 0% 62.5%, 6% 50%, 0% 37.5%, 6% 25%, 0% 12.5%
+            );
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Menu Row Card */
+        .menu-row-card {
+            background: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(255, 255, 255, 0.28);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .menu-row-card:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.65);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px -6px rgba(0, 20, 85, 0.35);
+        }
+        .menu-row-card:hover .serrated-ticket {
+            transform: scale(1.06) rotate(-1.5deg);
+        }
+        .menu-row-card.active-in-cart {
+            background: #FFFFFF;
+            color: #002B7A;
+            border-color: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(59, 123, 255, 0.65), 0 14px 28px -5px rgba(0, 20, 80, 0.45);
+        }
+        .menu-row-card.active-in-cart .item-title {
+            color: #002B7A;
+        }
+        .menu-row-card.active-in-cart .serrated-ticket {
+            background: #0047FF;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-36 selection:bg-white selection:text-blaban-blue">
+
+    <!-- Toast Notification -->
+    <div id="toast-box" class="fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-none transform -translate-y-24 opacity-0 transition-all duration-300 px-4">
+        <div class="bg-blaban-navy text-white border-2 border-white px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-2.5 font-extrabold text-xs sm:text-sm">
+            <span id="toast-icon" class="text-base">🍨</span>
+            <span id="toast-text">تم تحديث السلة</span>
+        </div>
+    </div>
+
+    <!-- Top Milk Splash SVG Wave -->
+    <div class="w-full overflow-hidden leading-none pointer-events-none select-none opacity-95">
+        <svg class="relative block w-full h-8 sm:h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative z-20 max-w-5xl mx-auto px-4 pt-2 pb-5 text-center">
+        <!-- Quick Top Bar -->
+        <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/30 px-3.5 py-2 rounded-2xl shadow-sm">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                </span>
+                <span class="text-xs sm:text-sm font-bold text-white">فرع الرمادي - مفتوح للطلبات</span>
+            </div>
+
+            <button onclick="openCart()" class="btn-spring btn-shine group relative flex items-center gap-2.5 bg-white text-blaban-navy hover:bg-blaban-light font-black px-4 py-2.5 rounded-2xl shadow-lg">
+                <div class="relative">
+                    <svg class="w-6 h-6 text-blaban-blue transition-transform group-hover:rotate-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <span id="top-cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+                </div>
+                <span id="top-cart-total" class="text-xs sm:text-sm font-extrabold">0 د.ع</span>
+            </button>
+        </div>
+
+        <!-- Brand Logo Carton Badge -->
+        <div class="inline-flex flex-col items-center justify-center mb-4">
+            <div class="float-slow bg-white text-blaban-navy px-5 sm:px-7 py-3.5 sm:py-4 rounded-[2.2rem] shadow-2xl border-4 border-blaban-wave flex items-center gap-3.5 sm:gap-4">
+                <!-- Official Circular B.Laban Sunburst Emblem SVG -->
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-md border-2 border-[#0052CC]/20 overflow-hidden shrink-0 hover:rotate-6 hover:scale-105 transition-transform duration-300">
+                    <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="blabanCircleClip">
+                                <circle cx="100" cy="100" r="100"/>
+                            </clipPath>
+                            <linearGradient id="shieldSkyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#006BB8"/>
+                                <stop offset="55%" stop-color="#0088DD"/>
+                                <stop offset="100%" stop-color="#2CC3FF"/>
+                            </linearGradient>
+                            <clipPath id="innerShieldClip">
+                                <path d="M52,66 C76,55 124,55 148,66 C155,70 158,76 158,85 L158,125 C158,133 154,139 147,142 C122,153 78,153 53,142 C46,139 42,133 42,125 L42,85 C42,76 45,70 52,66 Z"/>
+                            </clipPath>
+                        </defs>
+
+                        <!-- Radiating Sunburst Background -->
+                        <g clip-path="url(#blabanCircleClip)">
+                            <circle cx="100" cy="100" r="100" fill="#0066B3"/>
+                            <!-- 24 Sunburst Wedges (15 deg each) matching the official color sequence -->
+                            <!-- Top & Bottom White/Blue/Cyan/Cream Rays -->
+                            <polygon points="100,100 94,-10 120,-10" fill="#FFFFFF"/>
+                            <polygon points="100,100 120,-10 148,-5" fill="#0066B3"/>
+                            <polygon points="100,100 148,-5 178,12" fill="#5CE1FF"/>
+                            <polygon points="100,100 178,12 198,35" fill="#0066B3"/>
+                            <polygon points="100,100 198,35 212,62" fill="#FFE099"/>
+                            <polygon points="100,100 212,62 215,84" fill="#0066B3"/>
+                            <polygon points="100,100 215,84 215,108" fill="#FFFFFF"/>
+                            <polygon points="100,100 215,108 212,135" fill="#5CE1FF"/>
+                            <polygon points="100,100 212,135 198,158" fill="#0066B3"/>
+                            <polygon points="100,100 198,158 178,180" fill="#FFE099"/>
+                            <polygon points="100,100 178,180 155,198" fill="#0066B3"/>
+                            <polygon points="100,100 155,198 130,210" fill="#FFFFFF"/>
+                            <polygon points="100,100 130,210 112,215" fill="#0066B3"/>
+                            <polygon points="100,100 112,215 94,215" fill="#FFFFFF"/>
+                            <polygon points="100,100 94,215 76,212" fill="#0066B3"/>
+                            <polygon points="100,100 76,212 52,202" fill="#5CE1FF"/>
+                            <polygon points="100,100 52,202 32,186" fill="#0066B3"/>
+                            <polygon points="100,100 32,186 14,166" fill="#FFE099"/>
+                            <polygon points="100,100 14,166 -2,142" fill="#0066B3"/>
+                            <polygon points="100,100 -2,142 -12,115" fill="#5CE1FF"/>
+                            <polygon points="100,100 -12,115 -14,94" fill="#0066B3"/>
+                            <polygon points="100,100 -14,94 -12,75" fill="#FFFFFF"/>
+                            <polygon points="100,100 -12,75 -2,45" fill="#0066B3"/>
+                            <polygon points="100,100 -2,45 16,18" fill="#5CE1FF"/>
+                            <polygon points="100,100 16,18 38,0" fill="#FFE099"/>
+                            <polygon points="100,100 38,0 68,-10" fill="#5CE1FF"/>
+                            <polygon points="100,100 68,-10 94,-10" fill="#0066B3"/>
+                        </g>
+
+                        <!-- Outer Cyan/Blue Rounded Shield Frame -->
+                        <path d="M49,62 C75,50 125,50 151,62 C159,66 163,73 163,83 L163,127 C163,136 159,143 151,146 C125,158 75,158 49,146 C41,143 37,136 37,127 L37,83 C37,73 41,66 49,62 Z" fill="#FFFFFF" stroke="#0077C8" stroke-width="4.5"/>
+
+                        <!-- Inner Clipped Shield Content -->
+                        <g clip-path="url(#innerShieldClip)">
+                            <!-- Upper Blue Sky Half -->
+                            <rect x="35" y="50" width="130" height="75" fill="url(#shieldSkyGrad)"/>
+
+                            <!-- Lower White Milk Wave Half -->
+                            <path d="M35,109 Q65,120 100,115 T165,113 L165,160 L35,160 Z" fill="#FFFFFF"/>
+
+                            <!-- Arabic Calligraphy: "بـ لبن" -->
+                            <!-- "بـ" (Right side) -->
+                            <path d="M145,86 C147,93 144,96 137,96 L119,96" fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="122" y1="104" x2="129" y2="103" stroke="#99E6FF" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Droplet under بـ -->
+                            <path d="M142,102 C144,102 146,105 145,108 C144,110 140,110 139,107 C138,105 140,102 142,102 Z" fill="#B3ECFF"/>
+
+                            <!-- "لبن" (Center-Left flowing script) -->
+                            <path d="M104,63 L110,94 C111,100 106,105 101,103 C97,101 96,94 94,86 C92,96 88,104 83,103 C79,102 77,95 76,88 C75,98 70,109 62,108 C54,107 51,98 54,88" fill="none" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Fatha accent above لبن -->
+                            <line x1="90" y1="70" x2="99" y2="68" stroke="#B3ECFF" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Milk Droplet inside Noon (ن) -->
+                            <path d="M62,75 C65,75 67,79 65,82 C64,84 59,84 58,81 C57,78 59,75 62,75 Z" fill="#B3ECFF"/>
+                            <!-- Milk Droplet below Ba (ب) -->
+                            <path d="M97,107 C99,107 100,110 99,112 C98,114 95,114 94,111 C93,109 95,107 97,107 Z" fill="#B3ECFF"/>
+
+                            <!-- English "B . L A B A N" in Lower White Area -->
+                            <text x="54" y="135" font-family="'Alexandria', 'Cairo', sans-serif" font-weight="900" font-size="15" fill="#005596">B</text>
+                            <circle cx="71" cy="132" r="2.6" fill="#FFD166"/>
+                            <text x="80" y="135" font-family="'Alexandria', 'Cairo', sans-serif" font-weight="800" font-size="14" letter-spacing="3.2" fill="#005596">LABAN</text>
+                        </g>
+
+                        <!-- Inner Thin White/Blue Shield Outline -->
+                        <path d="M52,66 C76,55 124,55 148,66 C155,70 158,76 158,85 L158,125 C158,133 154,139 147,142 C122,153 78,153 53,142 C46,139 42,133 42,125 L42,85 C42,76 45,70 52,66 Z" fill="none" stroke="#005A9E" stroke-width="2.2"/>
+
+                        <!-- Signature Bottom Cyan Milk Droplet Splash on Shield Border -->
+                        <path d="M84,142 C89,140 94,146 92,151 C90,155 83,155 80,150 C78,146 80,143 84,142 Z" fill="#29B6F6"/>
+                    </svg>
+                </div>
+                <div class="text-right">
+                    <div class="text-3xl sm:text-5xl font-black tracking-tight text-blaban-blue leading-none mb-1.5">بـ لبن</div>
+                    <div class="text-xs sm:text-sm font-extrabold text-blaban-navy bg-blaban-light px-3 py-0.5 rounded-full inline-block">B.LABAN - فرع الرمادي</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slogans -->
+        <div class="space-y-1 mb-5">
+            <h1 class="text-xl sm:text-2xl font-black text-white drop-shadow">"إحنا أصل اللبن"</h1>
+            <p class="text-xs sm:text-base font-bold text-blue-100 max-w-xl mx-auto">
+                أقوى حلو في الوطن العربي بمنتجات ألبان طبيعية 100% 🥛✨
+            </p>
+        </div>
+
+        <!-- Location & Direct Phone Numbers -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-2.5 max-w-3xl mx-auto mb-5">
+            <div class="flex items-center gap-2 bg-white text-blaban-navy px-4 py-2.5 rounded-2xl shadow-md font-extrabold text-xs sm:text-sm w-full md:w-auto justify-center">
+                <svg class="w-5 h-5 text-blaban-blue flex-shrink-0 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>الرمادي - شارع الإسكان السايدين - مقابل مصرف الثقة الدولي</span>
+            </div>
+
+            <div class="flex items-center gap-2 w-full md:w-auto justify-center">
+                <a href="tel:07803111411" class="btn-spring flex-1 md:flex-initial flex items-center justify-center gap-1.5 bg-blaban-navy hover:bg-slate-900 text-white border border-white/30 px-4 py-2.5 rounded-2xl font-black text-xs sm:text-sm shadow">
+                    <svg class="w-4 h-4 text-emerald-400 phone-ring" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    <span dir="ltr">07803111411</span>
+                </a>
+                <a href="tel:07763111411" class="btn-spring flex-1 md:flex-initial flex items-center justify-center gap-1.5 bg-blaban-navy hover:bg-slate-900 text-white border border-white/30 px-4 py-2.5 rounded-2xl font-black text-xs sm:text-sm shadow">
+                    <svg class="w-4 h-4 text-emerald-400 phone-ring" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    <span dir="ltr">07763111411</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Instant Search Input -->
+        <div class="max-w-xl mx-auto relative">
+            <input 
+                type="text" 
+                id="search-input" 
+                oninput="searchItems(this.value)"
+                placeholder="ابحث عن قشطوطة، كشري، أرز بلبن، هبة دبي..." 
+                class="w-full bg-white text-blaban-navy placeholder-blaban-navy/50 font-bold text-sm sm:text-base rounded-2xl py-3.5 pr-12 pl-10 shadow-xl focus:outline-none focus:ring-4 focus:ring-white/40 transition-shadow"
+            >
+            <svg class="w-6 h-6 text-blaban-blue absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <button id="clear-search-btn" onclick="searchItems('')" class="btn-spring hidden absolute left-3.5 top-1/2 -translate-y-1/2 bg-blaban-light text-blaban-navy hover:bg-blaban-blue hover:text-white rounded-full p-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sticky Horizontal Category Navigation Bar -->
+    <nav class="sticky top-0 z-30 bg-blaban-blue/95 backdrop-blur-md border-y border-white/20 shadow-lg py-3">
+        <div class="max-w-5xl mx-auto px-4">
+            <div id="category-tabs-bar" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Menu Sections Container -->
+    <main id="menu-sections-container" class="max-w-5xl mx-auto px-4 pt-8 space-y-12">
+        <!-- Populated dynamically via JS -->
+    </main>
+
+    <!-- Empty Search State -->
+    <div id="empty-search-state" class="hidden max-w-md mx-auto px-4 py-16 text-center">
+        <div class="bg-white/15 backdrop-blur-md border border-white/30 rounded-3xl p-8">
+            <div class="text-5xl mb-3">🍧</div>
+            <h3 class="text-xl font-black text-white mb-2">لا توجد نتائج مطابقة للبحث</h3>
+            <p class="text-sm text-blue-100 mb-5">جرب البحث بكلمة أخرى أو استعرض القائمة الكاملة</p>
+            <button onclick="searchItems('')" class="btn-spring bg-white text-blaban-navy font-black px-6 py-2.5 rounded-xl shadow hover:bg-blaban-light">
+                عرض كل القائمة
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl mx-auto px-4 mt-16 pt-8 border-t border-white/20 text-center text-blue-100 text-xs sm:text-sm space-y-2">
+        <p class="font-black text-white text-base">بـ لبن - فرع الرمادي (B.Laban Ramadi)</p>
+        <p>الرمادي - شارع الإسكان السايدين - مقابل مصرف الثقة الدولي</p>
+        <p dir="ltr" class="font-bold">07803111411 | 07763111411</p>
+    </footer>
+
+    <!-- Floating Bottom Cart Bar -->
+    <div id="floating-cart-bar" class="fixed bottom-4 inset-x-4 max-w-3xl mx-auto z-40 transform translate-y-36 opacity-0 pointer-events-none transition-all duration-300">
+        <button onclick="openCart()" class="btn-spring w-full bg-white text-blaban-navy hover:bg-blaban-light p-3.5 sm:p-4 rounded-2xl shadow-2xl border-4 border-blaban-blue flex items-center justify-between group">
+            <div class="flex items-center gap-3">
+                <div id="bottom-cart-count" class="bg-blaban-blue text-white font-black w-11 h-11 rounded-xl flex items-center justify-center text-lg shadow-inner">
+                    0
+                </div>
+                <div class="text-right">
+                    <div class="text-xs font-bold text-blaban-navy/70">سلة طلباتك في بـ لبن</div>
+                    <div id="bottom-cart-total" class="text-base sm:text-lg font-black text-blaban-navy">0 د.ع</div>
+                </div>
+            </div>
+            <div class="btn-shine flex items-center gap-2 bg-blaban-blue text-white font-black px-4 py-2.5 rounded-xl text-sm sm:text-base group-hover:bg-blaban-navy transition">
+                <span>إتمام الطلب</span>
+                <svg class="w-5 h-5 rtl:rotate-180 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </div>
+        </button>
+    </div>
+
+    <!-- Slide-Over Cart Drawer Backdrop -->
+    <div id="cart-backdrop" onclick="closeCart()" class="fixed inset-0 bg-blaban-navy/75 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Slide-Over Cart Drawer -->
+    <aside id="cart-drawer" class="fixed top-0 left-0 bottom-0 w-full max-w-lg bg-white text-blaban-navy z-50 transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+        <!-- Drawer Header -->
+        <div class="bg-blaban-blue text-white p-4 sm:p-5 flex items-center justify-between shadow-md">
+            <div class="flex items-center gap-3">
+                <div class="bg-white text-blaban-blue p-2 rounded-xl font-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-lg sm:text-xl font-black">سلة الطلبات</h2>
+                    <p class="text-xs text-blue-100 font-semibold">بـ لبن - فرع الرمادي</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="clear-cart-btn" onclick="clearCart()" class="btn-spring text-xs bg-white/15 hover:bg-red-500 text-white font-bold px-3 py-1.5 rounded-lg hidden">
+                    إفراغ السلة
+                </button>
+                <button onclick="closeCart()" class="btn-spring bg-white/20 hover:bg-white/30 p-2 rounded-xl">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Drawer Scrollable Body -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-6">
+            <!-- Cart Items List -->
+            <div id="cart-items-list" class="space-y-3"></div>
+
+            <!-- Checkout Form Section -->
+            <div id="checkout-form-section" class="space-y-4 pt-4 border-t-2 border-dashed border-blaban-blue/20">
+                <h3 class="font-black text-base text-blaban-navy flex items-center gap-2">
+                    <span class="w-2 h-5 bg-blaban-blue rounded-full inline-block"></span>
+                    <span>طريقة الاستلام ومعلومات الزبون</span>
+                </h3>
+
+                <!-- Order Type Toggle -->
+                <div class="grid grid-cols-2 gap-2.5 bg-blaban-light p-1.5 rounded-2xl">
+                    <button type="button" id="btn-type-delivery" onclick="setOrderType('delivery')" class="btn-spring py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 bg-blaban-blue text-white shadow">
+                        <span>🛵</span>
+                        <span>توصيل للمنزل</span>
+                    </button>
+                    <button type="button" id="btn-type-pickup" onclick="setOrderType('pickup')" class="btn-spring py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 text-blaban-navy hover:bg-white/60">
+                        <span>🏪</span>
+                        <span>استلام من الفرع</span>
+                    </button>
+                </div>
+
+                <!-- Customer Details -->
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-extrabold text-blaban-navy mb-1">الاسم الكامل <span class="text-red-500">*</span></label>
+                        <input type="text" id="cust-name" oninput="saveCustomerFields()" placeholder="أدخل اسمك الكريم" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blaban-blue rounded-xl px-3.5 py-2.5 text-sm font-bold text-blaban-navy focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold text-blaban-navy mb-1">رقم الهاتف الفعال <span class="text-red-500">*</span></label>
+                        <input type="tel" id="cust-phone" oninput="saveCustomerFields()" dir="ltr" placeholder="078XXXXXXXX / 077XXXXXXXX" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blaban-blue rounded-xl px-3.5 py-2.5 text-sm font-bold text-blaban-navy text-right focus:outline-none">
+                    </div>
+
+                    <div id="address-input-group">
+                        <label class="block text-xs font-extrabold text-blaban-navy mb-1">العنوان في الرمادي بالتفصيل <span class="text-red-500">*</span></label>
+                        <input type="text" id="cust-address" oninput="saveCustomerFields()" placeholder="الحي، الشارع، أقرب نقطة دالة..." class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blaban-blue rounded-xl px-3.5 py-2.5 text-sm font-bold text-blaban-navy focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold text-blaban-navy mb-1">ملاحظات إضافية (اختياري)</label>
+                        <textarea id="cust-notes" oninput="saveCustomerFields()" rows="2" placeholder="أي ملاحظات حول الطلب أو الإضافات..." class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blaban-blue rounded-xl px-3.5 py-2 text-sm font-bold text-blaban-navy focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Validation Alert -->
+                <div id="form-error-box" class="hidden bg-red-50 border-2 border-red-400 text-red-700 px-4 py-2.5 rounded-xl text-xs font-extrabold"></div>
+            </div>
+        </div>
+
+        <!-- Drawer Footer -->
+        <div id="cart-drawer-footer" class="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 space-y-3">
+            <div class="space-y-1 text-sm">
+                <div class="flex justify-between font-bold text-slate-600">
+                    <span>إجمالي عدد القطع:</span>
+                    <span id="drawer-total-items">0</span>
+                </div>
+                <div id="delivery-note-row" class="flex justify-between font-bold text-slate-500 text-xs">
+                    <span>كلفة التوصيل:</span>
+                    <span>تُحدد حسب المنطقة عند التأكيد</span>
+                </div>
+                <div class="flex justify-between items-center text-lg font-black text-blaban-navy pt-1.5 border-t border-slate-200">
+                    <span>المجموع الكلي:</span>
+                    <span id="drawer-subtotal" class="text-blaban-blue text-xl">0 د.ع</span>
+                </div>
+            </div>
+
+            <button onclick="submitOrder()" class="btn-spring btn-shine w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-black py-3.5 px-4 rounded-2xl shadow-lg flex items-center justify-center gap-2.5 text-base">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.124.556 4.119 1.528 5.848l-1.528 5.581 5.713-1.499c1.676.898 3.591 1.411 5.627 1.411 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>إرسال الطلب عبر واتساب</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Complete Application Script -->
+    <script>
+        const WHATSAPP_PHONE = "9647803111411";
+        const STORAGE_CART_KEY = "blaban_ramadi_cart_v2";
+        const STORAGE_CUST_KEY = "blaban_ramadi_cust_v2";
+
+        // Complete 12-Category Menu Schema for B.Laban Ramadi
+        const MENU_SCHEMA = [
+            {
+                id: "cat-koshary",
+                title: "دنيا الكشري",
+                icon: "🥣",
+                items: [
+                    { id: "k1", name: "كشري نوتيلا", price: 5000 },
+                    { id: "k2", name: "كشري أوريو نوتيلا", price: 5000 },
+                    { id: "k3", name: "كشري كندر", price: 5000 },
+                    { id: "k4", name: "كشري لوتس", price: 5000 },
+                    { id: "k5", name: "كشري مانجا", price: 6000 },
+                    { id: "k6", name: "كشري بستاشيو", price: 7000 },
+                    { id: "k7", name: "كشري بستاشيو لوتس", price: 7000 }
+                ]
+            },
+            {
+                id: "cat-qashtouta",
+                title: "دنيا قشطوطة",
+                icon: "🍰",
+                items: [
+                    { id: "q1", name: "قشطوطة سادة", price: 3500 },
+                    { id: "q2", name: "قشطوطة كراميل", price: 4000 },
+                    { id: "q3", name: "قشطوطة مانجا", price: 6000 },
+                    { id: "q4", name: "قشطوطة مكسرات", price: 5000 },
+                    { id: "q5", name: "قشطوطة لوتس", price: 5000 },
+                    { id: "q6", name: "قشطوطة قشطه", price: 4000 },
+                    { id: "q7", name: "قشطوطة رز بـ لبن مكسرات", price: 6000 },
+                    { id: "q8", name: "قشطوطة رز بـ لبن لوتس", price: 6000 },
+                    { id: "q9", name: "قشطوطة رز بـ لبن مانجا", price: 7000 },
+                    { id: "q10", name: "قشطوطة رز بـ لبن كريمة", price: 5000 },
+                    { id: "q11", name: "قشطوطة سوبر لوكس", price: 7000 },
+                    { id: "q12", name: "شكلكليتا قشطوطه ساده", price: 6500 },
+                    { id: "q13", name: "شكلكليتا قشطوطه رز", price: 7000 }
+                ]
+            },
+            {
+                id: "cat-roz",
+                title: "دنيا رز",
+                icon: "🍚",
+                items: [
+                    { id: "r1", name: "أرز بـ لبن سادة", price: 3500 },
+                    { id: "r2", name: "أرز بـ لبن + مكسرات", price: 5000 },
+                    { id: "r3", name: "أرز بـ لبن + ايس حليب", price: 5000 },
+                    { id: "r4", name: "أرز بـ لبن لوتس بلجيكي", price: 5000 },
+                    { id: "r5", name: "أرز بـ لبن + قشطة + مكسرات", price: 7000 },
+                    { id: "r6", name: "دوبامين (ارز + لبن + ايس + مكسرات)", price: 6000 },
+                    { id: "r7", name: "سيرتونين (ارز بـ لبن + بسبوسة + ايس + مكسرات)", price: 6000 },
+                    { id: "r8", name: "أرز بـ لبن بيستاشيو بالايس", price: 7000 },
+                    { id: "r9", name: "ادرينالين", price: 6000 },
+                    { id: "r10", name: "كمين الشربين", price: 6000 },
+                    { id: "r11", name: "أرز بـ لبن + مانجا", price: 7000 },
+                    { id: "r12", name: "شكلكليتا رز", price: 6000 }
+                ]
+            },
+            {
+                id: "cat-loah",
+                title: "دنيا لؤه (ملوخيتوا)",
+                icon: "🍮",
+                items: [
+                    { id: "l1", name: "لؤه ساده", price: 5000 },
+                    { id: "l2", name: "لؤه نوتيلا", price: 6000 },
+                    { id: "l3", name: "لؤه اوريوا نوتيلا", price: 6500 },
+                    { id: "l4", name: "لؤه لوتس", price: 6500 },
+                    { id: "l5", name: "لؤه كندر", price: 6000 },
+                    { id: "l6", name: "لؤه بستاشيوا", price: 7000 },
+                    { id: "l7", name: "لؤه مانجا", price: 7000 },
+                    { id: "l8", name: "لؤه فراوله", price: 7000 },
+                    { id: "l9", name: "لؤه سوبر لوكس", price: 8000 }
+                ]
+            },
+            {
+                id: "cat-bambouza",
+                title: "دنيا البمبوظه",
+                icon: "🍧",
+                items: [
+                    { id: "b1", name: "بمبوظة سادة", price: 5000 },
+                    { id: "b2", name: "بمبوظة مكسرات", price: 5000 },
+                    { id: "b3", name: "بمبوظة لوتس", price: 5000 },
+                    { id: "b4", name: "بمبوظة قشطة", price: 5000 },
+                    { id: "b5", name: "بمبوظة بندق", price: 6000 },
+                    { id: "b6", name: "بمبوظة مانجا", price: 6000 }
+                ]
+            },
+            {
+                id: "cat-salankateeh",
+                title: "دنيا السالانكاتيه",
+                icon: "🍫",
+                items: [
+                    { id: "s1", name: "السالانكاتيه نوتيلا", price: 5500 },
+                    { id: "s2", name: "السالانكاتيه لوتس", price: 5500 },
+                    { id: "s3", name: "السالانكاتيه اوريو نوتيلا", price: 5500 },
+                    { id: "s4", name: "السالانكاتيه كيندر", price: 5500 },
+                    { id: "s5", name: "السالانكاتيه بيستاشيو", price: 6500 },
+                    { id: "s6", name: "السالانكاتيه مانجا", price: 6000 }
+                ]
+            },
+            {
+                id: "cat-icecream",
+                title: "دنيا الايس كريم",
+                icon: "🍦",
+                items: [
+                    { id: "ic1", name: "كوب ايس كريم صغير", price: 2500 },
+                    { id: "ic2", name: "كوب ايس كريم كبير", price: 4500 },
+                    { id: "ic3", name: "كوب ايس كريم صغير (فستق والبندق)", price: 4500 },
+                    { id: "ic4", name: "كونو ايس", price: 3500 },
+                    { id: "ic5", name: "كونو ايس فستق", price: 2500 }
+                ]
+            },
+            {
+                id: "cat-haleebo",
+                title: "دنيا الهاليبو",
+                icon: "🥤",
+                items: [
+                    { id: "h1", name: "لهاليبو شوكلاته", price: 3000 },
+                    { id: "h2", name: "لهاليبو حليب", price: 3000 },
+                    { id: "h3", name: "لهاليبو مانجا", price: 3500 },
+                    { id: "h4", name: "لهاليبو اوريو", price: 3500 },
+                    { id: "h5", name: "لهاليبو بندق", price: 4000 },
+                    { id: "h6", name: "لهاليبو زبادي توت", price: 3000 },
+                    { id: "h7", name: "لهاليبو يح يح حليب", price: 3500 },
+                    { id: "h8", name: "هاليبو فراولة", price: 3000 },
+                    { id: "h9", name: "لهاليبو يح يح شوكلاته", price: 3500 },
+                    { id: "h10", name: "هاليبو يح يح اوريو", price: 4000 },
+                    { id: "h11", name: "لهاليبو يح يح مانجا", price: 4000 },
+                    { id: "h12", name: "لهاليبو يح يح فراوله", price: 3500 },
+                    { id: "h13", name: "لهاليبو يح يح بندق", price: 4500 }
+                ]
+            },
+            {
+                id: "cat-omali",
+                title: "دنيا ام علي",
+                icon: "🥧",
+                items: [
+                    { id: "o1", name: "طاجن ام علي بالسمنة البلدي", price: 4000 },
+                    { id: "o2", name: "طاجن ام علي بالسمنة البلدي + قشطة", price: 5000 },
+                    { id: "o3", name: "طاجن ام علي بالسمنة البلدي ومكسرات", price: 5000 },
+                    { id: "o4", name: "طاجن ام علي قشطة ومكسرات", price: 6000 },
+                    { id: "o5", name: "طاجن ام علي البركة", price: 7000 }
+                ]
+            },
+            {
+                id: "cat-habbah",
+                title: "دنيا الهبه",
+                icon: "🔥",
+                items: [
+                    { id: "hb1", name: "هبة دبي", price: 8000 },
+                    { id: "hb2", name: "كريب دبي", price: 7500 },
+                    { id: "hb3", name: "تشيز بووم", price: 8000 },
+                    { id: "hb4", name: "قنبله دبي", price: 7000 },
+                    { id: "hb5", name: "فروليتا", price: 6000 },
+                    { id: "hb6", name: "كيك لندن", price: 6000 },
+                    { id: "hb7", name: "قنبلة فواكة", price: 7000 },
+                    { id: "hb8", name: "كريب الفراعنه", price: 9000 },
+                    { id: "hb9", name: "كبسة", price: 8000 }
+                ]
+            },
+            {
+                id: "cat-juices",
+                title: "دنيا العصائر",
+                icon: "🍹",
+                items: [
+                    { id: "j1", name: "برتقال", price: 3000 },
+                    { id: "j2", name: "زبيب", price: 3000 },
+                    { id: "j3", name: "فراولة", price: 3000 },
+                    { id: "j4", name: "مانجا", price: 4000 },
+                    { id: "j5", name: "موز", price: 3000 }
+                ]
+            },
+            {
+                id: "cat-extras",
+                title: "الإضافات",
+                icon: "✨",
+                items: [
+                    { id: "e1", name: "صوص نوتيلا", price: 1000 },
+                    { id: "e2", name: "صوص لوتس", price: 1000 },
+                    { id: "e3", name: "صوص كندر", price: 1500 },
+                    { id: "e4", name: "صوص بستاشيو", price: 1500 },
+                    { id: "e5", name: "بودر لوتس", price: 1000 },
+                    { id: "e6", name: "بودر اوريوا", price: 1000 },
+                    { id: "e7", name: "عسل النحل", price: 1000 },
+                    { id: "e8", name: "قشطه (جيمر)", price: 1000 },
+                    { id: "e9", name: "بسبوسه", price: 1000 },
+                    { id: "e10", name: "بسكوت ايس كريم (كونو)", price: 1000 },
+                    { id: "e11", name: "مكسرات مشكل", price: 1500 },
+                    { id: "e12", name: "بيبسي", price: 500 },
+                    { id: "e13", name: "الماء", price: 250 }
+                ]
+            }
+        ];
+
+        // Build Quick Lookup Dictionary
+        const ITEM_INDEX = {};
+        MENU_SCHEMA.forEach(cat => {
+            cat.items.forEach(item => {
+                ITEM_INDEX[item.id] = { ...item, categoryId: cat.id, categoryTitle: cat.title };
+            });
+        });
+
+        // Application State
+        let cart = {};
+        let orderType = "delivery"; // 'delivery' | 'pickup'
+        let activeCategory = "all";
+        let currentSearch = "";
+        let toastTimeout = null;
+
+        // Format Price in Iraqi Dinar
+        function formatIQD(amount) {
+            return Number(amount).toLocaleString("en-US") + " د.ع";
+        }
+
+        // Load Saved State Safely
+        function loadSavedState() {
+            try {
+                const rawCart = localStorage.getItem(STORAGE_CART_KEY);
+                if (rawCart) {
+                    const parsed = JSON.parse(rawCart);
+                    if (parsed && typeof parsed === "object") {
+                        Object.keys(parsed).forEach(id => {
+                            const qty = parseInt(parsed[id], 10);
+                            if (ITEM_INDEX[id] && qty > 0) {
+                                cart[id] = qty;
+                            }
+                        });
+                    }
+                }
+                const rawCust = localStorage.getItem(STORAGE_CUST_KEY);
+                if (rawCust) {
+                    const cust = JSON.parse(rawCust);
+                    if (cust && typeof cust === "object") {
+                        const nameEl = document.getElementById("cust-name");
+                        const phoneEl = document.getElementById("cust-phone");
+                        const addrEl = document.getElementById("cust-address");
+                        const notesEl = document.getElementById("cust-notes");
+                        if (nameEl && cust.name) nameEl.value = cust.name;
+                        if (phoneEl && cust.phone) phoneEl.value = cust.phone;
+                        if (addrEl && cust.address) addrEl.value = cust.address;
+                        if (notesEl && cust.notes) notesEl.value = cust.notes;
+                    }
+                }
+            } catch (err) {
+                console.warn("Storage read skipped:", err);
+            }
+        }
+
+        function saveCartState() {
+            try {
+                localStorage.setItem(STORAGE_CART_KEY, JSON.stringify(cart));
+            } catch (err) {}
+        }
+
+        window.saveCustomerFields = function() {
+            try {
+                const cust = {
+                    name: (document.getElementById("cust-name") || {}).value || "",
+                    phone: (document.getElementById("cust-phone") || {}).value || "",
+                    address: (document.getElementById("cust-address") || {}).value || "",
+                    notes: (document.getElementById("cust-notes") || {}).value || ""
+                };
+                localStorage.setItem(STORAGE_CUST_KEY, JSON.stringify(cust));
+            } catch (err) {}
+        };
+
+        // Show Toast Notification
+        function showToast(message, icon = "🍨") {
+            const box = document.getElementById("toast-box");
+            const textEl = document.getElementById("toast-text");
+            const iconEl = document.getElementById("toast-icon");
+            if (!box || !textEl || !iconEl) return;
+
+            textEl.textContent = message;
+            iconEl.textContent = icon;
+            box.classList.remove("-translate-y-24", "opacity-0");
+
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                box.classList.add("-translate-y-24", "opacity-0");
+            }, 2100);
+        }
+
+        function animateBadge(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.classList.remove("animate-pop");
+            void el.offsetWidth;
+            el.classList.add("animate-pop");
+        }
+
+        // Render Category Navigation Bar
+        function renderCategoryTabs() {
+            const bar = document.getElementById("category-tabs-bar");
+            if (!bar) return;
+
+            const allTabActive = activeCategory === "all";
+            let html = `
+                <button 
+                    onclick="filterCategory('all')" 
+                    id="tab-all"
+                    class="btn-spring whitespace-nowrap px-4 py-2 rounded-full font-extrabold text-xs sm:text-sm flex items-center gap-1.5 ${
+                        allTabActive 
+                        ? 'btn-shine bg-white text-blaban-navy shadow-md scale-105' 
+                        : 'bg-white/15 text-white hover:bg-white/25'
+                    }"
+                >
+                    <span>🥛</span>
+                    <span>الكل</span>
+                </button>
+            `;
+
+            html += MENU_SCHEMA.map(cat => {
+                const isActive = activeCategory === cat.id;
+                return `
+                    <button 
+                        onclick="filterCategory('${cat.id}')" 
+                        id="tab-${cat.id}"
+                        class="btn-spring whitespace-nowrap px-4 py-2 rounded-full font-extrabold text-xs sm:text-sm flex items-center gap-1.5 ${
+                            isActive 
+                            ? 'btn-shine bg-white text-blaban-navy shadow-md scale-105' 
+                            : 'bg-white/15 text-white hover:bg-white/25'
+                        }"
+                    >
+                        <span>${cat.icon}</span>
+                        <span>${cat.title}</span>
+                    </button>
+                `;
+            }).join("");
+
+            bar.innerHTML = html;
+        }
+
+        // Render Quantity Controller for a Card
+        function getQtyControlHTML(itemId, qty) {
+            if (!qty || qty <= 0) {
+                return `
+                    <button 
+                        onclick="updateQty('${itemId}', 1)" 
+                        aria-label="إضافة"
+                        class="btn-spring bg-white text-blaban-blue hover:bg-blaban-light font-black w-9 h-9 sm:w-10 sm:h-10 rounded-xl shadow-md flex items-center justify-center text-xl"
+                    >
+                        +
+                    </button>
+                `;
+            }
+            return `
+                <div class="flex items-center bg-blaban-navy text-white rounded-xl p-1 shadow-md gap-1.5 sm:gap-2 animate-pop">
+                    <button 
+                        onclick="updateQty('${itemId}', 1)" 
+                        class="btn-spring w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blaban-blue hover:bg-blaban-wave font-black flex items-center justify-center text-base"
+                    >
+                        +
+                    </button>
+                    <span class="font-black text-xs sm:text-sm min-w-[1.25rem] text-center">${qty}</span>
+                    <button 
+                        onclick="updateQty('${itemId}', -1)" 
+                        class="btn-spring w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/15 hover:bg-red-500 font-black flex items-center justify-center text-base"
+                    >
+                        −
+                    </button>
+                </div>
+            `;
+        }
+
+        // Render Main Menu Sections
+        function renderMenu() {
+            const container = document.getElementById("menu-sections-container");
+            const emptyState = document.getElementById("empty-search-state");
+            if (!container || !emptyState) return;
+
+            const query = currentSearch.trim().toLowerCase();
+            let totalVisibleItems = 0;
+
+            const sectionsHTML = MENU_SCHEMA.map(cat => {
+                if (activeCategory !== "all" && activeCategory !== cat.id) {
+                    return "";
+                }
+
+                const filteredItems = cat.items.filter(item => {
+                    if (!query) return true;
+                    return item.name.toLowerCase().includes(query) || cat.title.toLowerCase().includes(query);
+                });
+
+                if (filteredItems.length === 0) return "";
+                totalVisibleItems += filteredItems.length;
+
+                const itemsHTML = filteredItems.map(item => {
+                    const qty = cart[item.id] || 0;
+                    const activeClass = qty > 0 ? "active-in-cart" : "";
+                    return `
+                        <div id="card-${item.id}" class="menu-row-card ${activeClass} rounded-2xl p-3.5 sm:p-4 flex items-center justify-between gap-3">
+                            <div class="flex-1 min-w-0 pr-1">
+                                <h3 class="item-title font-extrabold text-sm sm:text-base md:text-lg leading-snug break-words">
+                                    ${item.name}
+                                </h3>
+                            </div>
+                            <div class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+                                <div class="serrated-ticket text-xs sm:text-sm whitespace-nowrap">
+                                    <span>${item.price.toLocaleString("en-US")}</span>
+                                    <span class="text-[10px] sm:text-xs font-extrabold mr-1">د.ع</span>
+                                </div>
+                                <div id="ctrl-${item.id}">
+                                    ${getQtyControlHTML(item.id, qty)}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join("");
+
+                return `
+                    <section id="${cat.id}" class="menu-category-section scroll-mt-24">
+                        <div class="flex justify-center mb-6">
+                            <div class="category-cloud-badge px-7 py-2.5 sm:px-9 sm:py-3">
+                                <span class="text-xl sm:text-2xl ml-2">${cat.icon}</span>
+                                <h2 class="text-lg sm:text-2xl font-black tracking-wide">${cat.title}</h2>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                            ${itemsHTML}
+                        </div>
+                    </section>
+                `;
+            }).join("");
+
+            container.innerHTML = sectionsHTML;
+
+            if (totalVisibleItems === 0) {
+                emptyState.classList.remove("hidden");
+            } else {
+                emptyState.classList.add("hidden");
+            }
+        }
+
+        // Global Function: Filter or Scroll to Category
+        window.filterCategory = function(catId) {
+            activeCategory = catId;
+            renderCategoryTabs();
+            renderMenu();
+
+            const tabBtn = document.getElementById(`tab-${catId}`);
+            if (tabBtn) {
+                tabBtn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+            }
+        };
+
+        // Global Function: Instant Search
+        window.searchItems = function(val) {
+            currentSearch = val || "";
+            const inputEl = document.getElementById("search-input");
+            const clearBtn = document.getElementById("clear-search-btn");
+            if (inputEl && inputEl.value !== currentSearch) {
+                inputEl.value = currentSearch;
+            }
+            if (clearBtn) {
+                if (currentSearch.trim().length > 0) {
+                    clearBtn.classList.remove("hidden");
+                } else {
+                    clearBtn.classList.add("hidden");
+                }
+            }
+            renderMenu();
+        };
+
+        // Global Function: Update Item Quantity
+        window.updateQty = function(itemId, delta) {
+            const item = ITEM_INDEX[itemId];
+            if (!item) return;
+
+            const current = cart[itemId] || 0;
+            const next = Math.max(0, current + delta);
+
+            if (next === 0) {
+                delete cart[itemId];
+            } else {
+                cart[itemId] = next;
+                if (current === 0 && delta > 0) {
+                    showToast(`تمت إضافة "${item.name}" إلى السلة`, "🍨");
+                }
+            }
+
+            saveCartState();
+
+            // Update Card DOM Directly
+            const cardEl = document.getElementById(`card-${itemId}`);
+            const ctrlEl = document.getElementById(`ctrl-${itemId}`);
+            if (cardEl && ctrlEl) {
+                if (next > 0) {
+                    cardEl.classList.add("active-in-cart");
+                } else {
+                    cardEl.classList.remove("active-in-cart");
+                }
+                ctrlEl.innerHTML = getQtyControlHTML(itemId, next);
+            }
+
+            animateBadge("top-cart-count");
+            animateBadge("bottom-cart-count");
+            updateCartUI();
+        };
+
+        // Global Function: Clear Entire Cart
+        window.clearCart = function() {
+            cart = {};
+            saveCartState();
+            renderMenu();
+            updateCartUI();
+            showToast("تم إفراغ السلة", "🗑️");
+        };
+
+        // Update All Cart Counters, Totals, and Drawer Items
+        function updateCartUI() {
+            let totalCount = 0;
+            let totalPrice = 0;
+
+            Object.entries(cart).forEach(([id, qty]) => {
+                const item = ITEM_INDEX[id];
+                if (item) {
+                    totalCount += qty;
+                    totalPrice += item.price * qty;
+                }
+            });
+
+            // Top & Bottom Bar Counters
+            const topCount = document.getElementById("top-cart-count");
+            const topTotal = document.getElementById("top-cart-total");
+            const bottomCount = document.getElementById("bottom-cart-count");
+            const bottomTotal = document.getElementById("bottom-cart-total");
+            const floatingBar = document.getElementById("floating-cart-bar");
+
+            if (topCount) topCount.textContent = totalCount;
+            if (topTotal) topTotal.textContent = formatIQD(totalPrice);
+            if (bottomCount) bottomCount.textContent = totalCount;
+            if (bottomTotal) bottomTotal.textContent = formatIQD(totalPrice);
+
+            if (floatingBar) {
+                if (totalCount > 0) {
+                    floatingBar.classList.remove("translate-y-36", "opacity-0", "pointer-events-none");
+                } else {
+                    floatingBar.classList.add("translate-y-36", "opacity-0", "pointer-events-none");
+                }
+            }
+
+            // Drawer Content
+            const listContainer = document.getElementById("cart-items-list");
+            const formSection = document.getElementById("checkout-form-section");
+            const footerSection = document.getElementById("cart-drawer-footer");
+            const clearBtn = document.getElementById("clear-cart-btn");
+            const drawerTotalItems = document.getElementById("drawer-total-items");
+            const drawerSubtotal = document.getElementById("drawer-subtotal");
+
+            if (drawerTotalItems) drawerTotalItems.textContent = totalCount;
+            if (drawerSubtotal) drawerSubtotal.textContent = formatIQD(totalPrice);
+
+            if (!listContainer) return;
+
+            if (totalCount === 0) {
+                if (clearBtn) clearBtn.classList.add("hidden");
+                if (formSection) formSection.classList.add("hidden");
+                if (footerSection) footerSection.classList.add("hidden");
+                listContainer.innerHTML = `
+                    <div class="text-center py-14 px-4">
+                        <div class="w-20 h-20 bg-blaban-light text-blaban-blue rounded-full flex items-center justify-center mx-auto mb-4 text-4xl shadow-inner">
+                            🍨
+                        </div>
+                        <h3 class="text-lg font-black text-blaban-navy mb-1">سلة طلباتك فارغة حالياً</h3>
+                        <p class="text-xs font-bold text-slate-500 mb-6">أضف أشهى الحلويات من قائمة بـ لبن الرمادي لتبدأ طلبك</p>
+                        <button onclick="closeCart()" class="btn-spring bg-blaban-blue text-white font-black px-6 py-3 rounded-xl shadow hover:bg-blaban-navy text-sm">
+                            تصفح القائمة الآن
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            if (clearBtn) clearBtn.classList.remove("hidden");
+            if (formSection) formSection.classList.remove("hidden");
+            if (footerSection) footerSection.classList.remove("hidden");
+
+            listContainer.innerHTML = Object.entries(cart).map(([id, qty]) => {
+                const item = ITEM_INDEX[id];
+                if (!item) return "";
+                const lineTotal = item.price * qty;
+                return `
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3 flex items-center justify-between gap-2">
+                        <div class="flex-1 min-w-0">
+                            <div class="text-[11px] font-bold text-blaban-blue">${item.categoryTitle}</div>
+                            <h4 class="font-black text-sm text-blaban-navy truncate">${item.name}</h4>
+                            <div class="text-xs font-extrabold text-slate-500 mt-0.5">
+                                ${formatIQD(item.price)} × ${qty} = <span class="text-blaban-navy font-black">${formatIQD(lineTotal)}</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-white border border-slate-200 rounded-xl p-1 gap-2 shadow-sm">
+                            <button onclick="updateQty('${id}', 1)" class="btn-spring w-7 h-7 rounded-lg bg-blaban-blue text-white font-black flex items-center justify-center text-sm">+</button>
+                            <span class="font-black text-xs min-w-[1.2rem] text-center text-blaban-navy">${qty}</span>
+                            <button onclick="updateQty('${id}', -1)" class="btn-spring w-7 h-7 rounded-lg bg-slate-100 hover:bg-red-500 hover:text-white text-blaban-navy font-black flex items-center justify-center text-sm">−</button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        // Global Functions: Open & Close Cart Drawer
+        window.openCart = function() {
+            const backdrop = document.getElementById("cart-backdrop");
+            const drawer = document.getElementById("cart-drawer");
+            const errBox = document.getElementById("form-error-box");
+            if (errBox) errBox.classList.add("hidden");
+
+            if (backdrop && drawer) {
+                backdrop.classList.remove("hidden");
+                setTimeout(() => {
+                    backdrop.classList.remove("opacity-0");
+                    drawer.classList.remove("-translate-x-full");
+                }, 10);
+                document.body.style.overflow = "hidden";
+            }
+        };
+
+        window.closeCart = function() {
+            const backdrop = document.getElementById("cart-backdrop");
+            const drawer = document.getElementById("cart-drawer");
+            if (backdrop && drawer) {
+                backdrop.classList.add("opacity-0");
+                drawer.classList.add("-translate-x-full");
+                setTimeout(() => {
+                    backdrop.classList.add("hidden");
+                }, 300);
+                document.body.style.overflow = "";
+            }
+        };
+
+        // Global Function: Set Order Type (Delivery vs Pickup)
+        window.setOrderType = function(type) {
+            orderType = type === "pickup" ? "pickup" : "delivery";
+            const delBtn = document.getElementById("btn-type-delivery");
+            const pickBtn = document.getElementById("btn-type-pickup");
+            const addrGroup = document.getElementById("address-input-group");
+            const delNote = document.getElementById("delivery-note-row");
+
+            if (orderType === "delivery") {
+                if (delBtn) delBtn.className = "btn-spring py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 bg-blaban-blue text-white shadow";
+                if (pickBtn) pickBtn.className = "btn-spring py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 text-blaban-navy hover:bg-white/60";
+                if (addrGroup) addrGroup.classList.remove("hidden");
+                if (delNote) delNote.classList.remove("hidden");
+            } else {
+                if (pickBtn) pickBtn.className = "btn-spring py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 bg-blaban-blue text-white shadow";
+                if (delBtn) delBtn.className = "btn-spring py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-2 text-blaban-navy hover:bg-white/60";
+                if (addrGroup) addrGroup.classList.add("hidden");
+                if (delNote) delNote.classList.add("hidden");
+            }
+        };
+
+        function showFormError(msg, inputId) {
+            const errBox = document.getElementById("form-error-box");
+            if (errBox) {
+                errBox.textContent = msg;
+                errBox.classList.remove("hidden");
+            }
+            if (inputId) {
+                const input = document.getElementById(inputId);
+                if (input) input.focus();
+            }
+        }
+
+        // Global Function: Submit Formatted WhatsApp Order
+        window.submitOrder = function() {
+            const entries = Object.entries(cart);
+            if (entries.length === 0) return;
+
+            const name = ((document.getElementById("cust-name") || {}).value || "").trim();
+            const phone = ((document.getElementById("cust-phone") || {}).value || "").trim();
+            const address = ((document.getElementById("cust-address") || {}).value || "").trim();
+            const notes = ((document.getElementById("cust-notes") || {}).value || "").trim();
+            const errBox = document.getElementById("form-error-box");
+            if (errBox) errBox.classList.add("hidden");
+
+            if (!name) {
+                showFormError("⚠️ يرجى إدخال الاسم الكامل لإتمام الطلب.", "cust-name");
+                return;
+            }
+            if (!phone || phone.length < 10) {
+                showFormError("⚠️ يرجى إدخال رقم هاتف صحيح للتواصل.", "cust-phone");
+                return;
+            }
+            if (orderType === "delivery" && !address) {
+                showFormError("⚠️ يرجى كتابة العنوان في الرمادي بالتفصيل.", "cust-address");
+                return;
+            }
+
+            let subtotal = 0;
+            let totalPieces = 0;
+            const itemLines = entries.map(([id, qty], idx) => {
+                const item = ITEM_INDEX[id];
+                const lineSum = item.price * qty;
+                subtotal += lineSum;
+                totalPieces += qty;
+                return `${idx + 1}. *${item.name}*\n   الكمية: ${qty} × ${item.price.toLocaleString("en-US")} = *${lineSum.toLocaleString("en-US")} د.ع*`;
+            }).join("\n\n");
+
+            const orderModeLabel = orderType === "delivery" ? "🛵 توصيل للمنزل (دليفري)" : "🏪 استلام من الفرع";
+
+            let receipt = `🥛 *طلب جديد - بـ لبن (فرع الرمادي)* 🥛\n`;
+            receipt += `━━━━━━━━━━━━━━━━━━━━\n`;
+            receipt += `👤 *الاسم:* ${name}\n`;
+            receipt += `📞 *الهاتف:* ${phone}\n`;
+            receipt += `📦 *نوع الطلب:* ${orderModeLabel}\n`;
+            if (orderType === "delivery") {
+                receipt += `📍 *العنوان:* ${address}\n`;
+            }
+            if (notes) {
+                receipt += `📝 *ملاحظات:* ${notes}\n`;
+            }
+            receipt += `━━━━━━━━━━━━━━━━━━━━\n`;
+            receipt += `🍨 *تفاصيل الطلب (${totalPieces} قطع):*\n\n${itemLines}\n`;
+            receipt += `━━━━━━━━━━━━━━━━━━━━\n`;
+            receipt += `💰 *المجموع الكلي:* *${subtotal.toLocaleString("en-US")} د.ع*\n`;
+            if (orderType === "delivery") {
+                receipt += `*(يضاف أجور التوصيل حسب المنطقة)*\n`;
+            }
+            receipt += `━━━━━━━━━━━━━━━━━━━━\n`;
+            receipt += `📍 الرمادي - شارع الإسكان السايدين - مقابل مصرف الثقة الدولي`;
+
+            const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(receipt)}`;
+            window.open(whatsappUrl, "_blank");
+        };
+
+        // Initialize Immediately & on DOMContentLoaded
+        function initApp() {
+            loadSavedState();
+            renderCategoryTabs();
+            renderMenu();
+            updateCartUI();
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initApp);
+        } else {
+            initApp();
+        }
+    </script>
+</body>
+</html>
